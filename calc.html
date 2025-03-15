@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <style>
+        .cont1, .cont2, .a, .b, .c, .d {
+            display: flex;
+            width: 200px;
+            height: 50px;
+            background-color: black;
+            color: aqua;
+            flex-direction: left;
+            margin-top: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        .abs {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="const">
+            <div class="cont1">
+                <h3>A</h3>
+                <input class="k" id="one" required><br>
+            </div>
+            <div class="cont2">
+                <h3>B</h3>
+                <input class="l" id="two" required>
+            </div>
+        </div>
+        <p id="res1" style="display:none;">
+            Addition Result = <input id="addResult" readonly>
+        </p>
+        <p id="res2" style="display:none;">
+            Subtraction Result = <input id="subResult" readonly>
+        </p>
+        <p id="res3" style="display:none;">
+            Multiplication Result = <input id="mulResult" readonly>
+        </p>
+        <p id="res4" style="display:none;">
+            Division Result = <input id="divResult" readonly>
+        </p>
+        <div class="abs">
+            <div class="a">
+                <button id="add" onclick="calc1()">Add</button>
+            </div>
+            <div class="b">
+                <button id="sub" onclick="calc2()">Sub</button>
+            </div>
+            <div class="c">
+                <button id="mul" onclick="calc3()">Multiply</button>
+            </div>
+            <div class="d">
+                <button id="div" onclick="calc4()">Divide</button>
+            </div>
+        </div>
+        
+    </center>
+
+    <script>
+        function calc1() {
+            var one = parseFloat(document.getElementById("one").value);
+            var two = parseFloat(document.getElementById("two").value);
+            
+                var res = one + two;
+                document.getElementById("addResult").value = res;
+                document.getElementById("res1").style.display = "block";
+            
+        }
+
+        function calc2() {
+            var one = parseFloat(document.getElementById("one").value);
+            var two = parseFloat(document.getElementById("two").value);
+            
+                var res = one - two;
+                document.getElementById("subResult").value = res;
+                document.getElementById("res2").style.display = "block";
+            
+        }
+
+        function calc3() {
+            var one = parseFloat(document.getElementById("one").value);
+            var two = parseFloat(document.getElementById("two").value);
+            
+                var res = one * two;
+                document.getElementById("mulResult").value = res;
+                document.getElementById("res3").style.display = "block";
+        }
+
+        function calc4() {
+            var one = parseFloat(document.getElementById("one").value);
+            var two = parseFloat(document.getElementById('two').value);
+                    var res = one / two;
+                    document.getElementById("divResult").value = res;
+                    document.getElementById("res4").style.display = "block";
+                } 
+        
+    </script>
+</body>
+</html>
